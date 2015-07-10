@@ -1,3 +1,7 @@
+import sys
+
+argv = sys.argv[1:]
+
 def bsearch(A,n):
 	last = len(A) - 1
 	first = 0
@@ -6,7 +10,8 @@ def bsearch(A,n):
 
 	while first <= last:
 		count += 1
-		print "Count ",count
+		if argv and argv[0] == "-v":
+			print "Count ",count
 
 		m = (last + first)//2
 		if A[last] == n:
